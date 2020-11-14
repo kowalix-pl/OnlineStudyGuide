@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% if user_signed_in?%>
+    <h1>You are signed in!</h1>
+    <%else%>
+    <h1>You are not signed in!</h1>
+    <%end%>
+    <h1>Hello World</h1>
     <%= yield %>
   </body>
 </html>
