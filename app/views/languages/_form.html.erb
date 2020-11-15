@@ -17,8 +17,10 @@
   </div>
 
   <div class="field">
-    <%= form.label :language_type %>
-    <%= form.text_field :language_type %>
+    <%= form.label :language_type, "Front end" %>
+    <%= form.radio_button :language_type, "Front end" %>
+    <%= form.label :language_type, "Back end" %>
+    <%= form.radio_button :language_type, "Back end" %>
   </div>
 
   <div class="actions">
