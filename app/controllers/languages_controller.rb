@@ -4,7 +4,7 @@ class LanguagesController < ApplicationController
   # GET /languages
   # GET /languages.json
   def index
-    @languages = Language.all
+    @languages = current_user.languages
   end
 
   # GET /languages/1
@@ -14,17 +14,18 @@ class LanguagesController < ApplicationController
 
   # GET /languages/new
   def new
-    @language = Language.new
+    @language = current_user.languages.new
   end
 
   # GET /languages/1/edit
   def edit
+    
   end
 
   # POST /languages
   # POST /languages.json
   def create
-    @language = Language.new(language_params)
+    @language = current_user.languages.new(language_params)
 
     respond_to do |format|
       if @language.save
@@ -64,7 +65,7 @@ class LanguagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_language
-      @language = Language.find(params[:id])
+      @language = current_user.languages.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

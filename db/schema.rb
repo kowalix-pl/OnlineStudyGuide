@@ -15,8 +15,10 @@ ActiveRecord::Schema.define(version: 2020_11_15_185335) do
   create_table "languages", force: :cascade do |t|
     t.string "name"
     t.string "language_type"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_languages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
