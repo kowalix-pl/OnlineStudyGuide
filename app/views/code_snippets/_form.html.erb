@@ -1,4 +1,4 @@
-<%= form_with(model: code_snippet, local: true) do |form| %>
+<%= form_with(model: code_snippet, local: true, url: [@language,code_snippet]) do |form| %>
   <% if code_snippet.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(code_snippet.errors.count, "error") %> prohibited this code_snippet from being saved:</h2>

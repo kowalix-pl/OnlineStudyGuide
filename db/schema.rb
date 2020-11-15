@@ -14,8 +14,10 @@ ActiveRecord::Schema.define(version: 2020_11_15_201350) do
 
   create_table "code_snippets", force: :cascade do |t|
     t.text "code"
+    t.integer "language_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["language_id"], name: "index_code_snippets_on_language_id"
   end
 
   create_table "languages", force: :cascade do |t|
