@@ -32,8 +32,10 @@ ActiveRecord::Schema.define(version: 2020_11_16_193043) do
   create_table "learning_resources", force: :cascade do |t|
     t.text "reference"
     t.boolean "accessed"
+    t.integer "language_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["language_id"], name: "index_learning_resources_on_language_id"
   end
 
   create_table "users", force: :cascade do |t|

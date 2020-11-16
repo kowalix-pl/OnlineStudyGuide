@@ -6,7 +6,7 @@
     <tr>
       <th>Name</th>
       <th>Language type</th>
-      <th colspan="4"></th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
@@ -19,6 +19,7 @@
         <td><%= link_to 'Edit', edit_language_path(language) %></td>
         <td><%= link_to 'Destroy', language, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Code Snippets',  language_code_snippets_path(language) %></td>
+         <td><%= link_to 'Lerning Resources',  language_learning_resources_path(language) %></td>
       </tr>
     <% end %>
   </tbody>
