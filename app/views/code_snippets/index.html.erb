@@ -12,9 +12,9 @@
     <% @code_snippets.each do |code_snippet| %>
       <tr>
         <td><%= code_snippet.code %></td>
-        <td><%= link_to 'Show', code_snippet %></td>
-        <td><%= link_to 'Edit', edit_code_snippet_path(code_snippet) %></td>
-        <td><%= link_to 'Destroy', code_snippet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', language_code_snippet_path(@language,code_snippet) %></td>
+        <td><%= link_to 'Edit', edit_language_code_snippet_path(@language,code_snippet) %></td>
+        <td><%= link_to 'Destroy', language_code_snippet_path(@language,code_snippet), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,5 +1,5 @@
 <h1>New Code Snippet</h1>
 
-<%= render 'form', code_snippet: @code_snippet %>
+<%= render 'form', code_snippet: @code_snippet, language: @language%>
 
-<%= link_to 'Back', code_snippets_path %>
+<%= link_to 'Back', language_code_snippets_path(@language) %>
