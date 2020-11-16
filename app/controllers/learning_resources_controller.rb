@@ -1,10 +1,11 @@
 class LearningResourcesController < ApplicationController
+  before_action :set_language
   before_action :set_learning_resource, only: [:show, :edit, :update, :destroy]
 
   # GET /learning_resources
   # GET /learning_resources.json
   def index
-    @learning_resources = LearningResource.all
+    @learning_resources = @language.learning_resources
   end
 
   # GET /learning_resources/1
@@ -14,7 +15,7 @@ class LearningResourcesController < ApplicationController
 
   # GET /learning_resources/new
   def new
-    @learning_resource = LearningResource.new
+    @learning_resource = @language.learning_resources.new
   end
 
   # GET /learning_resources/1/edit
@@ -24,11 +25,11 @@ class LearningResourcesController < ApplicationController
   # POST /learning_resources
   # POST /learning_resources.json
   def create
-    @learning_resource = LearningResource.new(learning_resource_params)
+    @learning_resource = @language.learning_resources.new(learning_resource_params)
 
     respond_to do |format|
       if @learning_resource.save
-        format.html { redirect_to @learning_resource, notice: 'Learning resource was successfully created.' }
+        format.html { redirect_to [@language,@learning_resource], notice: 'Learning resource was successfully created.' }
         format.json { render :show, status: :created, location: @learning_resource }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class LearningResourcesController < ApplicationController
   def update
     respond_to do |format|
       if @learning_resource.update(learning_resource_params)
-        format.html { redirect_to @learning_resource, notice: 'Learning resource was successfully updated.' }
+        format.html { redirect_to [@language,@learning_resource] , notice: 'Learning resource was successfully updated.' }
         format.json { render :show, status: :ok, location: @learning_resource }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class LearningResourcesController < ApplicationController
   def destroy
     @learning_resource.destroy
     respond_to do |format|
-      format.html { redirect_to learning_resources_url, notice: 'Learning resource was successfully destroyed.' }
+      format.html { redirect_to language_learning_resources_url(@language), notice: 'Learning resource was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,11 +65,16 @@ class LearningResourcesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_learning_resource
-      @learning_resource = LearningResource.find(params[:id])
+      @learning_resource = @language.learning_resources.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def learning_resource_params
       params.require(:learning_resource).permit(:reference, :accessed)
     end
+
+    def set_language
+      @language = current_user.languages.find(params[:language_id])
+    end
+
 end

@@ -1,6 +1,6 @@
 <h1>Editing Learning Resource</h1>
 
-<%= render 'form', learning_resource: @learning_resource %>
+<%= render 'form', learning_resource: @learning_resource, language: @language  %>
 
-<%= link_to 'Show', @learning_resource %> |
-<%= link_to 'Back', learning_resources_path %>
+<%= link_to 'Show', [@language,@learning_resource] %> |
+<%= link_to 'Back', language_learning_resources_path(@language) %>

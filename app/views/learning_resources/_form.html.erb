@@ -1,4 +1,4 @@
-<%= form_with(model: learning_resource, local: true) do |form| %>
+<%= form_with(model: learning_resource, local: true, url: [language,learning_resource]) do |form| %>
   <% if learning_resource.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(learning_resource.errors.count, "error") %> prohibited this learning_resource from being saved:</h2>

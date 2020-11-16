@@ -15,9 +15,9 @@
       <tr>
         <td><%= learning_resource.reference %></td>
         <td><%= learning_resource.accessed %></td>
-        <td><%= link_to 'Show', learning_resource %></td>
-        <td><%= link_to 'Edit', edit_learning_resource_path(learning_resource) %></td>
-        <td><%= link_to 'Destroy', learning_resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [@language,learning_resource] %></td>
+        <td><%= link_to 'Edit', edit_language_learning_resource_path(@language,learning_resource) %></td>
+        <td><%= link_to 'Destroy', [@language,learning_resource], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Learning Resource', new_learning_resource_path %>
+<%= link_to 'New Learning Resource', new_language_learning_resource_path(@language) %>
