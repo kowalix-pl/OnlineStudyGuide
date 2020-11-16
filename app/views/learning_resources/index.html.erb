@@ -1,0 +1,28 @@
+
+<h1>Learning Resources</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reference</th>
+      <th>Accessed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @learning_resources.each do |learning_resource| %>
+      <tr>
+        <td><%= learning_resource.reference %></td>
+        <td><%= learning_resource.accessed %></td>
+        <td><%= link_to 'Show', learning_resource %></td>
+        <td><%= link_to 'Edit', edit_learning_resource_path(learning_resource) %></td>
+        <td><%= link_to 'Destroy', learning_resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Learning Resource', new_learning_resource_path %>

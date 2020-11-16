@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_15_201350) do
+ActiveRecord::Schema.define(version: 2020_11_16_193043) do
 
   create_table "code_snippets", force: :cascade do |t|
     t.text "code"
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 2020_11_15_201350) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_languages_on_user_id"
+  end
+
+  create_table "learning_resources", force: :cascade do |t|
+    t.text "reference"
+    t.boolean "accessed"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

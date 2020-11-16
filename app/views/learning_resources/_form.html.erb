@@ -1,0 +1,27 @@
+<%= form_with(model: learning_resource, local: true) do |form| %>
+  <% if learning_resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(learning_resource.errors.count, "error") %> prohibited this learning_resource from being saved:</h2>
+
+      <ul>
+        <% learning_resource.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :reference %>
+    <%= form.text_area :reference %>
+  </div>
+
+  <div class="field">
+    <%= form.label :accessed %>
+    <%= form.check_box :accessed %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

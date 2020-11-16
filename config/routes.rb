@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :learning_resources
   resources :languages do
     resources :code_snippets
   end 
