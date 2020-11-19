@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :certifications
   resources :languages do
     resources :code_snippets
     resources :learning_resources
