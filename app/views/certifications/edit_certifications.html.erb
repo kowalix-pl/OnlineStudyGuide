@@ -1,1 +1,15 @@
 <h1>User Certificates for: <%= @certification.name %></h1>
+<table>
+  <thead>
+   <th>
+     <td>Students</td>
+   </th>
+  </thead>
+  <tbody>
+    <% User.students.each do |user|%>
+     <tr>
+      <td> <%= user.email%> </td>
+     </tr>
+     <% end %>
+  </tbody>
+</table>
