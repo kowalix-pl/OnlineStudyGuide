@@ -1,12 +1,10 @@
-
-
 <h1>Certifications</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -17,6 +15,7 @@
         <td><%= link_to 'Show', certification %></td>
         <td><%= link_to 'Edit', edit_certification_path(certification) %></td>
         <td><%= link_to 'Destroy', certification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit User Certifications', certification_edit_certifications_path(certification) %></td>
       </tr>
     <% end %>
   </tbody>

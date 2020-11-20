@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :certifications
+  resources :certifications do 
+    get "edit_certifications", to: "certifications#edit_certifications", as: "edit_certifications" 
+  end
   resources :languages do
     resources :code_snippets
     resources :learning_resources

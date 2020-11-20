@@ -62,6 +62,10 @@ class CertificationsController < ApplicationController
     end
   end
 
+  def edit_certifications
+    @certification = Certification.find(params[:certification_id])
+  end 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_certification
