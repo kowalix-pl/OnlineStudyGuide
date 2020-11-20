@@ -1,14 +1,16 @@
 <h1>User Certificates for: <%= @certification.name %></h1>
 <table>
   <thead>
-   <th>
-     <td>Students</td>
-   </th>
+   <tr>
+     <th>Students</th>
+     <th>Grades</th>
+   </tr>
   </thead>
   <tbody>
     <% User.students.each do |user|%>
      <tr>
       <td> <%= user.email%> </td>
+      <td> <%= select(:user, :grade, [["",0],["A", 5],["B",4],["C", 3],["D",2],["F",1]])%> </td>
      </tr>
      <% end %>
   </tbody>
