@@ -12,7 +12,7 @@
      <tr>
       <td> <%= user.email%> </td>
       <td>
-        <%= select_tag("grades[#{user.id}]", options_from_collection_for_select(@possible_grades, "last", "first", 4)) %>
+        <%= select_tag("grades[#{user.id}]", options_from_collection_for_select(@possible_grades, "last", "first", @assigned_grades[user.id])) %>
       </td>
      </tr>
      <% end %>

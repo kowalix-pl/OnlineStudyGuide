@@ -65,10 +65,20 @@ class CertificationsController < ApplicationController
   def edit_certifications
     @certification = Certification.find(params[:certification_id])
     @possible_grades = [["",0],["A", 5],["B",4],["C", 3],["D",2],["F",1]]
+    @assigned_grades = {}
+    @certification.user_certifications.each do |user_certification|
+     @assigned_grades[user_certification.user_id]=user_certification.grade
+    end 
   end 
 
   def update_certifications
-    puts params
+    @certification = Certification.find(params[:certification_id])
+    params["grades"].each do |user_id,grade|
+     user_certification = @certification.user_certifications.find_or_create_by(user_id: user_id)
+     user_certification.grade = grade
+     user_certification.save
+    end
+
     flash[:notice]="The grades have been updated!"
     redirect_to action: :edit_certifications
   end 
