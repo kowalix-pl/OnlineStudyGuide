@@ -64,6 +64,13 @@ class CertificationsController < ApplicationController
 
   def edit_certifications
     @certification = Certification.find(params[:certification_id])
+    @possible_grades = [["",0],["A", 5],["B",4],["C", 3],["D",2],["F",1]]
+  end 
+
+  def update_certifications
+    puts params
+    flash[:notice]="The grades have been updated!"
+    redirect_to action: :edit_certifications
   end 
 
   private

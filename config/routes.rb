@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :certifications do 
     get "edit_certifications", to: "certifications#edit_certifications", as: "edit_certifications" 
+    post "update_certifications", to: "certifications#update_certifications", as: "update_certifications" 
   end
   resources :languages do
     resources :code_snippets
