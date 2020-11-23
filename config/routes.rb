@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :learning_resources
   end 
 
+  get "certified_students", to: "students#certified_students", as: "certified_students"
+
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "languages#index"

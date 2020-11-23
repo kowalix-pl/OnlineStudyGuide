@@ -12,6 +12,7 @@
   <body>
     <%=render partial: "partials/login_status"%>
     <%=link_to 'Main Page', root_path%>
+    <%=link_to 'Certified Students Page', certified_students_path%>
     <% if current_user && current_user.lecturer %>
       <%=link_to 'Certifications Page', certifications_path%> 
     <% end %>
