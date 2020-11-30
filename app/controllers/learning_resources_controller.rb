@@ -1,5 +1,6 @@
 class LearningResourcesController < ApplicationController
   before_action :set_language
+  before_action :authenticate_user!
   before_action :set_learning_resource, only: [:show, :edit, :update, :destroy]
 
   # GET /learning_resources

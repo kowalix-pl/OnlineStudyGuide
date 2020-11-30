@@ -1,5 +1,6 @@
 class CodeSnippetsController < ApplicationController
   before_action :set_language
+  before_action :authenticate_user!
   before_action :set_code_snippet, only: [:show, :edit, :update, :destroy]
 
   # GET /code_snippets
