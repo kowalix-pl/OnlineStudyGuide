@@ -1,9 +1,10 @@
 <h1>Code Snippets</h1>
 
-<table>
-  <thead>
+<table class=" table table-striped table-hover table-bordered">
+  <thead class="thead-dark">
+  
     <tr>
-      <th>Code</th>
+      <th>Code Snippets</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,4 +23,5 @@
 
 <br>
 
-<%= link_to 'New Code Snippet', new_language_code_snippet_path %>
+<%= link_to 'Back', languages_path, class:"btn btn-dark active" %>
+<%= link_to 'Add Code Snippet', new_language_code_snippet_path, class:"btn btn-secondary active" %>

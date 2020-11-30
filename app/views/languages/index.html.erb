@@ -1,8 +1,8 @@
 
 <h1>Languages</h1>
 
-<table>
-  <thead>
+<table class=" table table-striped table-hover table-bordered">
+  <thead class="thead-dark">
     <tr>
       <th>Name</th>
       <th>Language type</th>
@@ -19,7 +19,7 @@
         <td><%= link_to 'Edit', edit_language_path(language) %></td>
         <td><%= link_to 'Destroy', language, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Code Snippets',  language_code_snippets_path(language) %></td>
-         <td><%= link_to 'Lerning Resources',  language_learning_resources_path(language) %></td>
+         <td><%= link_to 'Learning Resources',  language_learning_resources_path(language) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Language', new_language_path %>
+<%= link_to 'Add New Language', new_language_path , class:"btn btn-dark active"%>

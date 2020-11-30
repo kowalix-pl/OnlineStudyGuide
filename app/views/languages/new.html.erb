@@ -1,5 +1,7 @@
-<h1>New Language</h1>
-
-<%= render 'form', language: @language %>
-
-<%= link_to 'Back', languages_path %>
+<div class="jumbotron">
+  <h1 class="display-4">Add New Language</h1>
+  <%= render 'form', language: @language%>
+  <p class="lead"></p>
+  <hr class="my-4">
+  <%= link_to 'Back', languages_path, class:"btn btn-dark active" %>
+</div>

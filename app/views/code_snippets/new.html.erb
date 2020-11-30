@@ -2,4 +2,5 @@
 
 <%= render 'form', code_snippet: @code_snippet, language: @language%>
 
-<%= link_to 'Back', language_code_snippets_path(@language) %>
+<%= link_to 'Back', language_code_snippets_path(@language), class:"btn btn-dark active" %>
+

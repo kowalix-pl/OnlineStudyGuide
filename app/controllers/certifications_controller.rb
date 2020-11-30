@@ -52,16 +52,6 @@ class CertificationsController < ApplicationController
     end
   end
 
-  # DELETE /certifications/1
-  # DELETE /certifications/1.json
-  def destroy
-    @certification.destroy
-    respond_to do |format|
-      format.html { redirect_to certifications_url, notice: 'Certification was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
   def edit_certifications
     @certification = Certification.find(params[:certification_id])
     @possible_grades = [["",0],["A", 5],["B",4],["C", 3],["D",2],["F",1]]

@@ -1,19 +1,18 @@
 <h1> Passed Certifications</h1>
-<table>
-  <thead>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
       <th>Student Email</th>
       <th>Student Grade</th>
       <th>Student Certificate</th>
     </tr>
   </thead>
-
   <tbody>
 <% @passed_certificates.each do |passed_certificate| %>
       <tr>  
       <td> <%= passed_certificate.user.email %></td>
       <td> <%= passed_certificate.grade %></td>
-      <td><%= passed_certificate.certification.name %></td>
+      <td> <%= passed_certificate.certification.name %></td>
       </tr>
     <% end %>
   </tbody>

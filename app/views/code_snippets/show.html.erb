@@ -3,5 +3,5 @@
   <%= @code_snippet.code %>
 </p>
 
-<%= link_to 'Edit', edit_language_code_snippet_path(@language,@code_snippet) %> |
-<%= link_to 'Back', language_code_snippets_path(@language) %>
+<%= link_to 'Edit', edit_language_code_snippet_path(@language,@code_snippet), class:"btn btn-secondary active" %> 
+<%= link_to 'Back', language_code_snippets_path(@language), class:"btn btn-secondary active"  %>

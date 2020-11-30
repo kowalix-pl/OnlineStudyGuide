@@ -1,9 +1,12 @@
-<h1>Certifications</h1>
+<h1>Available Certifications</h1>
 
-<table>
-  <thead>
+<table class=" table table-striped table-hover table-bordered">
+  <thead class="thead-dark">
     <tr>
-      <th>Name</th>
+      <th>Programming Language</th>
+      <th>Display Certificate</th>
+      <th>Update Certificate</th>
+      <th>Update User Certifications</th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -13,9 +16,8 @@
       <tr>
         <td><%= certification.name %></td>
         <td><%= link_to 'Show', certification %></td>
-        <td><%= link_to 'Edit', edit_certification_path(certification) %></td>
-        <td><%= link_to 'Destroy', certification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Edit User Grades', certification_edit_certifications_path(certification) %></td>
+        <td><%= link_to 'Edit Certificate', edit_certification_path(certification) %></td>
+        <td><%= link_to 'Edit User Certifications', certification_edit_certifications_path(certification) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -23,4 +25,6 @@
 
 <br>
 
-<%= link_to 'New Certification', new_certification_path %>
+<%= link_to 'Create New Certification', new_certification_path,class:"btn btn-secondary active"%>
+
+
