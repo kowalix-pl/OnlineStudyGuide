@@ -1,24 +1,41 @@
-# README
+# Welcome to OnlineStudyGuide - your very own repository of information about programming languages.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+From now on you will not have to waste your time trying to memorise your favourite languages. Our software will help you track.
 
-Things you may want to cover:
+## Project Description
+   OnlineStudyGuide - is an online repository that provides a storage facility for your favourite computer programs. It not only allows you to add new albums and review them,update the exisiting ones and remove those that you are no longer interested in keeping, but it also has built-in feature that allows you to assing a numeric ranking based on your own personal criteria. 
 
-* Ruby version
+## Installation Guide 
+   Please follow the below-listed steps to install our program:
 
-* System dependencies
+   Clone the repository using the command:
+   `git clone git@github.com:kowalix-pl/OnlineStudyGuide.git`
 
-* Configuration
+   Install all necessary gems with the command:
+   `bundle install`
+   
+   Migrate the database using the command:
+   `rake db:migrate`
 
-* Database creation
+   Seed the database using the command:
+   `rake db:seed`
 
-* Database initialization
+## Running  Guide:
+   Use `rails s` to run the application. 
 
-* How to run the test suite
+## Contributing
+   Bug reports and pull requests are welcome on GitHub at https://github.com/kowalix-pl/discogs-sinatra. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org/) code of conduct.
 
-* Services (job queues, cache servers, search engines, etc.)
+## License
+   The gem is available as open source under the terms of the [MIT](https://opensource.org/licenses/MIT) License.
 
-* Deployment instructions
+## Code of Conduct
+   Everyone interacting in the DiscogsSinatra project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
+ 
+
+
+
+
+
 
 * ...
