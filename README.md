@@ -40,5 +40,3 @@ From now on you will not have to waste your time trying to memorise your favouri
 ## Code of Conduct
    Everyone interacting in the DiscogsSinatra project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
  
-
-* ...
